@@ -1,1 +1,34 @@
-<main>kaydol kaydol kaydol</main>
+<main>
+    <div class="container">
+        <form class="form">
+            <div class="input-icons">
+                <mat-icon class="icon i" aria-hidden="false" fontIcon="person">
+                </mat-icon>
+                <input class="input" placeholder="Username">
+            </div>
+            <div class="input-icons">
+                <mat-icon class="icon" aria-hidden="false" fontIcon="lock"></mat-icon>
+                <input class="input" placeholder="Password">
+            </div>
+            <div class="input-icons">
+                <mat-icon class="icon" aria-hidden="false" fontIcon="lock"></mat-icon>
+                <input class="input" placeholder="Confirm Password">
+            </div>
+            <div class="input-icons">
+                <mat-icon class="icon" aria-hidden="false" fontIcon="supervisor_account"></mat-icon>
+                <mat-select class="select" value="">
+                    <mat-option value="" disabled selected>User Type</mat-option>
+                    <mat-option value="user">User</mat-option>
+                    <mat-option value="admin">Admin</mat-option>
+                </mat-select>
+            </div>
+            <br>
+            <button class="btn-register">REGISTER</button> <br>
+        </form>
+        <span class="text">
+            Already have an account?
+            <a routerLink="/">Log in.</a>
+        </span>
+
+    </div>
+</main>

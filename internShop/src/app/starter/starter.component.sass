@@ -1,0 +1,67 @@
+$orange: #EA7A4F
+$yellow: #F6D64B
+$green: #65D086
+$red: #ce4334
+$blue: #5892bf
+$white: #FDFDFD
+$black: #1e1f22
+$fontFamily: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+
+.container
+    display: flex
+    flex: 1
+    flex-direction: column
+    margin-top: 150px
+
+.form
+    align-self: center
+    width: 25%
+
+.icon
+    margin: 10px
+    font-size: 23px
+    min-width: 70px
+    position: absolute
+
+.input
+    align-self: center
+    width: 100%
+    margin-bottom: 10px
+    box-sizing: border-box
+    border: none
+    border-bottom: 2px solid $orange
+    border-radius: 5px
+    font-size: 16px
+    color: $black
+    text-decoration-color: $black
+    background-position: 10px 10px
+    padding: 12px 20px 12px 40px
+    transition: width 0.5s ease-in-out
+    &:focus
+        width: 110%
+
+.btn-login
+    height: 40px
+    width: 50%
+    margin-left: 25%
+    background-color: $black
+    color: $white
+    font-family: $fontFamily
+    font-size: 15px
+    font-weight: bold
+    border: none
+    border-radius: 5px
+    transition: width 0.10s ease-in-out
+    &:hover
+        background-color: $orange
+        transition: width 0.5s ease-in-out
+
+.text
+    font-family: $fontFamily
+    font-size: 15px
+    align-self: center
+    margin-top: 10px
+    color: $red
+    a
+        color: $blue
+        text-decoration: none
