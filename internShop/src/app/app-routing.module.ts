@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./starter/starter.module').then(m => m.StarterModule)
+  },
+  {
+    path: '**',
+    component: ErrorComponent
   },
 
 ];
