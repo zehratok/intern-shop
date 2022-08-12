@@ -10,6 +10,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CartModalComponent } from './cart-modal/cart-modal.component';
+import { ProductSummaryComponent } from './shopping-cart/product-summary/product-summary.component';
+import { CartSummaryComponent } from './shopping-cart/cart-summary/cart-summary.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { CartModalComponent } from './cart-modal/cart-modal.component';
     ShopComponent,
     ProductItemComponent,
     ShoppingCartComponent,
-    CartModalComponent
+    CartModalComponent,
+    ProductSummaryComponent,
+    CartSummaryComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +29,7 @@ import { CartModalComponent } from './cart-modal/cart-modal.component';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
   ]
 })
 export class ShopModule { }
