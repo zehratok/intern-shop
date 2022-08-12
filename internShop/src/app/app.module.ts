@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ErrorComponent } from './error/error.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,8 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   ],
   providers: [],
