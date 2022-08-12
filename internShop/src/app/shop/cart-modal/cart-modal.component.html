@@ -1,0 +1,13 @@
+<h2 mat-dialog-title align="center">OFFER ADDED TO CART!</h2>
+<mat-dialog-content class="mat-typography">
+    <img align="end" src="../../../assets/images/phone.jpg">
+    <mat-card-title align="end">Mobile Phone</mat-card-title>
+    <mat-card-subtitle align="end">Oppo Rx17-Neo</mat-card-subtitle>
+    <mat-card-content align="end">
+        <span>7699₺</span>
+    </mat-card-content>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close class="continue">See other offers </button>
+    <button mat-button class="goCart" [mat-dialog-close]="true" (click)="goCart()">Go to cart</button>
+</mat-dialog-actions>

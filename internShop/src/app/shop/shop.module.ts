@@ -7,19 +7,25 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { CartModalComponent } from './cart-modal/cart-modal.component';
 
 
 @NgModule({
   declarations: [
     ShopComponent,
-    ProductItemComponent
+    ProductItemComponent,
+    ShoppingCartComponent,
+    CartModalComponent
   ],
   imports: [
     CommonModule,
     ShopRoutingModule,
     MatCardModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ]
 })
 export class ShopModule { }
