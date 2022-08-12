@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './error/error.component';
 import { ShopComponent } from './shop/shop.component';
+import { ShoppingCartComponent } from './shop/shopping-cart/shopping-cart.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,9 @@ const routes: Routes = [
   {
     path: "shop", component: ShopComponent,
     loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule)
+  },
+  {
+    path: "shopping-cart", component: ShoppingCartComponent
   },
   {
     path: '**',
