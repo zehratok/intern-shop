@@ -12,6 +12,7 @@ import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { CartModalComponent } from './cart-modal/cart-modal.component';
 import { ProductSummaryComponent } from './shopping-cart/product-summary/product-summary.component';
 import { CartSummaryComponent } from './shopping-cart/cart-summary/cart-summary.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CartSummaryComponent } from './shopping-cart/cart-summary/cart-summary.
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
+    MatDividerModule
   ]
 })
 export class ShopModule { }

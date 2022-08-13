@@ -1,1 +1,41 @@
-<p>product-summary works!</p>
+<mat-card>
+    <div align="end">
+        <button class="btn-delete" (click)="trash()">
+            <mat-icon class="delete">delete_outline</mat-icon>
+        </button>
+    </div>
+    <div class="prod-card">
+        <img src="../../../../assets/images/phone.jpg">
+        <mat-card-title-group>
+            <mat-card-title>Mobile Phone</mat-card-title>
+            <mat-card-subtitle class="description">Oppo Rx-17 Neo</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-title-group>
+            <mat-card-subtitle class="title"> Unit price </mat-card-subtitle>
+            <mat-card-subtitle class="value">{{unitPrice}}₺</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-title-group>
+            <mat-card-subtitle class="title">Piece</mat-card-subtitle>
+            <mat-card-subtitle class="value">
+                <div class="counter" ng-controller="counterCtrl as ctrl">
+                    <button class="btn-counter" (click)="decrement()" ng-disabled="isLimitExceeded()"> - </button>
+                    <span class="counter-text"> {{ count }} </span>
+                    <button class="btn-counter" (click)="increment()" ng-disabled="isLimitExceeded()">+</button>
+                </div>
+            </mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-title-group>
+            <mat-card-subtitle class="title">Amount</mat-card-subtitle>
+            <mat-card-subtitle class="value">{{amount}}₺</mat-card-subtitle>
+        </mat-card-title-group>
+    </div>
+    <br>
+    <mat-divider inset></mat-divider>
+    <mat-card-actions align="end">
+        <mat-card-subtitle></mat-card-subtitle>
+        <mat-card-subtitle class="footer title">Seller:</mat-card-subtitle>
+        <mat-card-subtitle class="footer value">Alaska</mat-card-subtitle>
+        <div class="verticalLine"></div>
+        <mat-card-subtitle class="footer shipping ">Shipping in 1 Business Day</mat-card-subtitle>
+    </mat-card-actions>
+</mat-card>
