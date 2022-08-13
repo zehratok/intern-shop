@@ -1,1 +1,20 @@
-<p>cart-summary works!</p>
+<div class="container">
+    <span class="title">Order Summary ({{prodPcs}} Product)</span>
+    <div class="total-group">
+        <span class="total-text">Products Total:</span>
+        <span class="total-value">{{total}}₺</span>
+    </div>
+    <div class="shipping-group">
+        <span class="shipping-text">Shipping Amount:</span>
+        <span class="shipping-value">{{shipping}}₺</span>
+    </div>
+    <br>
+    <mat-divider></mat-divider>
+    <br>
+    <div class="payable-group">
+        <span class="payable-text">Amount Payable (Including VAT)</span>
+        <span class="payable-value">{{payable}}₺</span>
+    </div>
+    <button class="complete">Complete the order</button>
+
+</div>

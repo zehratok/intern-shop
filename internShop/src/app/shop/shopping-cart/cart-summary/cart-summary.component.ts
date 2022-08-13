@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart-summary.component.sass']
 })
 export class CartSummaryComponent implements OnInit {
-
+  prodPcs = 15;
+  total= 589.45;
+  shipping=24.90;
+  payable= this.total+this.shipping;
   constructor() { }
 
   ngOnInit(): void {
