@@ -1,23 +1,23 @@
 <div class="container row">
-    <mat-card class="example-card col ">
-        <img src="../../../assets/images/phone.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-header>
-            <mat-card-title>Mobile Phone</mat-card-title>
-            <mat-card-subtitle>Oppo Rx17-Neo</mat-card-subtitle>
-        </mat-card-header>
-        <div class="info-prod">
-            <mat-card-content>
-                <p>8459₺</p>
-                <span>7699₺</span>
-            </mat-card-content>
-            <mat-card-actions>
-                <button class="fav-btn">
-                    <mat-icon class="fav">favorite_border</mat-icon>
-                </button>
-                <button class="shop-btn" (click)="addCart()">
-                    <mat-icon class="shop">add_shopping_cart</mat-icon>
-                </button>
-            </mat-card-actions>
-        </div>
-    </mat-card>
+  <mat-card class="example-card col">
+    <img src="{{product.image}}" alt="" />
+    <mat-card-header>
+      <mat-card-title>{{ product.title }}</mat-card-title>
+      <mat-card-subtitle>{{ product.model }}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="info-prod">
+      <mat-card-content>
+        <p>{{ product.oldPrice }}₺</p>
+        <span>{{ product.price }}₺</span>
+      </mat-card-content>
+      <mat-card-actions>
+        <button class="fav-btn">
+          <mat-icon class="fav">favorite_border</mat-icon>
+        </button>
+        <button class="shop-btn" (click)="addCart()">
+          <mat-icon class="shop">add_shopping_cart</mat-icon>
+        </button>
+      </mat-card-actions>
+    </div>
+  </mat-card>
 </div>
