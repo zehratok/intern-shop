@@ -13,6 +13,7 @@ import { CartModalComponent } from './cart-modal/cart-modal.component';
 import { ProductSummaryComponent } from './shopping-cart/product-summary/product-summary.component';
 import { CartSummaryComponent } from './shopping-cart/cart-summary/cart-summary.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {MatDividerModule} from '@angular/material/divider';
     ShoppingCartComponent,
     CartModalComponent,
     ProductSummaryComponent,
-    CartSummaryComponent
+    CartSummaryComponent,
+    ProductDetailsComponent
   ],
   imports: [
     CommonModule,

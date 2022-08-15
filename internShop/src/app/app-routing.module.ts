@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ErrorComponent } from './error/error.component';
+import { ProductDetailsComponent } from './shop/product-details/product-details.component';
 import { ShopComponent } from './shop/shop.component';
 import { ShoppingCartComponent } from './shop/shopping-cart/shopping-cart.component';
 
@@ -15,6 +16,9 @@ const routes: Routes = [
   },
   {
     path: "shopping-cart", component: ShoppingCartComponent
+  },
+  {
+    path: "product-details", component: ProductDetailsComponent
   },
   {
     path: '**',
