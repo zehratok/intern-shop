@@ -6,22 +6,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.ProductItemComponent = void 0;
+exports.ShopComponent = void 0;
 var core_1 = require("@angular/core");
-var ProductItemComponent = /** @class */ (function () {
-    function ProductItemComponent() {
+var ShopComponent = /** @class */ (function () {
+    function ShopComponent(showToolBar, productService) {
+        this.showToolBar = showToolBar;
+        this.productService = productService;
     }
-    ProductItemComponent.prototype.ngOnInit = function () { };
+    ShopComponent.prototype.ngOnInit = function () {
+        this.productService.getProducts();
+    };
     __decorate([
         core_1.Input()
-    ], ProductItemComponent.prototype, "product");
-    ProductItemComponent = __decorate([
+    ], ShopComponent.prototype, "product");
+    ShopComponent = __decorate([
         core_1.Component({
-            selector: 'app-product-item',
-            templateUrl: './product-item.component.html',
-            styleUrls: ['./product-item.component.sass']
+            selector: 'app-shop',
+            templateUrl: './shop.component.html',
+            styleUrls: ['./shop.component.sass']
         })
-    ], ProductItemComponent);
-    return ProductItemComponent;
+    ], ShopComponent);
+    return ShopComponent;
 }());
-exports.ProductItemComponent = ProductItemComponent;
+exports.ShopComponent = ShopComponent;

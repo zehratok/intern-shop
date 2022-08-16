@@ -15,7 +15,7 @@ var shopping_cart_component_1 = require("./shopping-cart/shopping-cart.component
 var routes = [
     { path: '', component: shop_component_1.ShopComponent },
     { path: 'shopping-cart', component: shopping_cart_component_1.ShoppingCartComponent },
-    { path: 'product-details', component: product_details_component_1.ProductDetailsComponent },
+    { path: 'product-details/:id', component: product_details_component_1.ProductDetailsComponent },
 ];
 var ShopRoutingModule = /** @class */ (function () {
     function ShopRoutingModule() {

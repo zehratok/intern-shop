@@ -1,1 +1,26 @@
-<p>product-details works!</p>
+<div class="productDetails row">
+  <div class="image col-12 col-md-5">
+    <img src="{{ product.image }}" alt="" />
+  </div>
+  <div class="details col-12 col-md-5">
+    <mat-card-title>{{ product.title }} </mat-card-title>
+    <mat-card-subtitle>{{ product.model }} </mat-card-subtitle>
+    <mat-card class="color">
+      <mat-card-subtitle>Select color:
+    </mat-card-subtitle>
+      <div class="colorGroup">
+        <div class="grey"></div>
+        <div class="black"></div>
+        <div class="white"></div>
+      </div>
+    </mat-card>
+    <mat-card class="price example-card">
+      <p>{{ product.oldPrice }}₺</p>
+      <span>{{ product.price }}₺</span>
+    </mat-card>
+    <mat-card class="shipping">
+      <mat-card-subtitle>Shipping</mat-card-subtitle>
+    </mat-card>
+    <button (click)="addCart()">Add Cart</button>
+  </div>
+</div>

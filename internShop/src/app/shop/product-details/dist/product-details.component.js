@@ -10,10 +10,25 @@ exports.ProductDetailsComponent = void 0;
 var core_1 = require("@angular/core");
 var cart_modal_component_1 = require("../cart-modal/cart-modal.component");
 var ProductDetailsComponent = /** @class */ (function () {
-    function ProductDetailsComponent(dialog) {
+    function ProductDetailsComponent(productService, dialog, route) {
+        this.productService = productService;
         this.dialog = dialog;
+        this.route = route;
     }
-    ProductDetailsComponent.prototype.ngOnInit = function () { };
+    ProductDetailsComponent.prototype.ngOnInit = function () {
+        this.showDetails();
+    };
+    ProductDetailsComponent.prototype.showDetails = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            _this.id = +params['id'];
+        });
+        this.productService.getProductId(this.id).subscribe(function (res) {
+            _this.product = res;
+            console.log(_this.product);
+        });
+        console.log(this.id);
+    };
     ProductDetailsComponent.prototype.addCart = function () {
         var dialog = this.dialog.open(cart_modal_component_1.CartModalComponent, {
             width: '300px',

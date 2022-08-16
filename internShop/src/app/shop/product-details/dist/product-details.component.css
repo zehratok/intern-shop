@@ -1,0 +1,105 @@
+.productDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+img {
+  width: 70%;
+  border-radius: 5px;
+  margin-top: 10%;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.mat-card-title {
+  color: #5892bf;
+}
+
+.mat-card-subtitle {
+  color: #5892bf;
+}
+
+.color {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.colorGroup {
+  display: flex;
+  flex-direction: row;
+}
+
+.grey {
+  border-radius: 50px;
+  border: 1px solid grey;
+  height: 50px;
+  width: 50px;
+  background-color: #c0c0c0;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.black {
+  border-radius: 50px;
+  border: 1px solid grey;
+  height: 50px;
+  width: 50px;
+  background-color: black;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.white {
+  border-radius: 50px;
+  border: 1px solid grey;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  margin: 2px;
+  cursor: pointer;
+}
+
+.price {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: flexbox;
+  flex-direction: column;
+  height: 100px;
+}
+.price p {
+  font-style: italic;
+  font-size: 15px;
+  color: #1e1f22;
+  text-decoration-line: line-through;
+  margin-bottom: -5px;
+}
+.price span {
+  font-size: 18px;
+  color: #EA7A4F;
+  text-decoration-line: none;
+  margin-bottom: -5px;
+  font-weight: bold;
+  justify-content: flex-end;
+}
+
+.shipping {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+button {
+  margin-top: 20px;
+  background-color: #EA7A4F;
+  border: none;
+  height: 40px;
+  border-radius: 10px;
+}
