@@ -1,5 +1,20 @@
 module.exports = function () {
     return {
+        users: [
+            {
+                id: 1,
+                userName: 'zehra',
+                password: 'alaska19',
+                userType: 1
+            },
+            {
+                id: 2,
+                userName: 'alaska',
+                password: '12345',
+                userType: 1
+            },
+        ],
+
         products: [
             {
                 id: 1,
@@ -11,7 +26,6 @@ module.exports = function () {
 
             }, {
                 id: 2,
-                image: "../../assets/images/phone.jpg",
                 image: "../../assets/images/phone3.jpg",
                 title: 'Mobile Phone',
                 model: 'Oppo Rx17-Neo',
@@ -28,9 +42,6 @@ module.exports = function () {
 
             }, {
                 id: 4,
-                image: "../../assets/images/phone.jpg",
-                title: 'Mobile Phone',
-                model: 'Oppo Rx17-Neo',
                 image: "../../assets/images/phone3.jpg",
                 title: 'SAMSUNG Smart Phone',
                 model: 'Galaxy A-50',
@@ -40,10 +51,6 @@ module.exports = function () {
             }, {
                 id: 5,
                 image: "../../assets/images/phone.jpg",
-                title: 'Mobile Phone',
-                model: 'Oppo Rx17-Neo',
-                oldPrice: 8599,
-                price: 7599,
                 title: 'SAMSUNG Smart Phone',
                 model: 'Galaxy M-20',
                 oldPrice: 6377,
@@ -62,3 +69,5 @@ module.exports = function () {
     }
 }
 
+//userType:1 -> admin
+//userType:2 -> user
