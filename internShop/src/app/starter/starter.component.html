@@ -1,21 +1,67 @@
 <main>
-    <div class="container">
-        <form class="form">
-            <div class="input-icons">
-                <mat-icon class="icon i" aria-hidden="false" aria-label="Example home icon" fontIcon="person"></mat-icon>
-                <input class="input" placeholder="Username">
-            </div>
-            <div class="input-icons">
-                <mat-icon class="icon" aria-hidden="false" aria-label="Example home icon" fontIcon="lock"></mat-icon>
-                <input class="input" placeholder="Password">
-            </div>
-            <button class="btn-login">LOGIN</button> <br>
-            <button class="btn-login" (click)="login()">LOGIN</button> <br>
-        </form>
-        <span class="text">
-            Don't have an account?
-            <a routerLink="/register">Register now.</a>
-        </span>
-    </div>
+  <div class="container">
+    <form class="form" [formGroup]="loginForm">
+      <div class="input-icons">
+        <mat-icon class="icon i" aria-hidden="false" fontIcon="person">
+        </mat-icon>
+        <input
+          type="text"
+          class="input"
+          placeholder="Username"
+          name="userName"
+          formControlName="userName"
+        />
+        <div
+          *ngIf="
+            loginForm.controls.userName.errors &&
+            loginForm.controls.userName.dirty
+          "
+          class="error"
+        >
+          Username is required
+        </div>
+      </div>
 
+      <div class="input-icons">
+        <mat-icon class="icon" aria-hidden="false" fontIcon="lock"></mat-icon>
+        <button class="password" (click)="showHidePassword()">
+          <div *ngIf="showPassword">
+            <mat-icon
+              class="icon"
+              aria-hidden="false"
+              fontIcon="visibility_off"
+            ></mat-icon>
+          </div>
+          <div *ngIf="!showPassword">
+            <mat-icon
+              class="icon"
+              aria-hidden="false"
+              fontIcon="visibility"
+            ></mat-icon>
+          </div>
+        </button>
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          class="input"
+          placeholder="Password"
+          name="password"
+          formControlName="password"
+        />
+
+        <div
+          *ngIf="
+            loginForm.controls.password.errors &&
+            loginForm.controls.password.dirty
+          "
+          class="error"
+        ></div>
+      </div>
+      <button type="submit" class="btn-login" (click)="login()">LOGIN</button>
+      <br />
+    </form>
+    <span class="text">
+      Don't have an account?
+      <a routerLink="/register">Register now.</a>
+    </span>
+  </div>
 </main>

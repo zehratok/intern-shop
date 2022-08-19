@@ -9,12 +9,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ErrorComponent
-  ],
+  declarations: [AppComponent, ErrorComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,13 +21,15 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatSnackBarModule,
     MatIconModule,
     MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule
   ],
   providers: [
     {
       provide: 'apiUrl',
-      useValue: 'http://localhost:3500'
-    }
+      useValue: 'http://localhost:3500',
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
