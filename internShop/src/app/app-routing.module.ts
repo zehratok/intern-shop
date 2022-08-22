@@ -4,31 +4,39 @@ import { ErrorComponent } from './error/error.component';
 import { ProductDetailsComponent } from './shop/product-details/product-details.component';
 import { ShopComponent } from './shop/shop.component';
 import { ShoppingCartComponent } from './shop/shopping-cart/shopping-cart.component';
+import { RegisterComponent } from './starter/register/register.component';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./starter/starter.module').then(m => m.StarterModule)
+    loadChildren: () =>
+      import('./starter/starter.module').then((m) => m.StarterModule),
   },
   {
-    path: "shop", component: ShopComponent,
-    loadChildren: () => import('./shop/shop.module').then(m => m.ShopModule)
+    path: 'register',
+    component: RegisterComponent,
   },
   {
-    path: "shopping-cart", component: ShoppingCartComponent
+    path: 'shop',
+    component: ShopComponent,
+    loadChildren: () => import('./shop/shop.module').then((m) => m.ShopModule),
   },
   {
-    path: "product-details/:id", component: ProductDetailsComponent
+    path: 'shopping-cart',
+    component: ShoppingCartComponent,
+  },
+  {
+    path: 'product-details/:id',
+    component: ProductDetailsComponent,
   },
   {
     path: '**',
-    component: ErrorComponent
+    component: ErrorComponent,
   },
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -17,6 +17,7 @@ $fontFamily: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
     align-self: center
     width: 25%
     min-width: 270px
+    position: relative
 
 .icon
     margin: 10px
@@ -37,9 +38,19 @@ $fontFamily: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
     text-decoration-color: $black
     padding: 12px 20px 12px 40px
     transition: width 0.5s ease-in-out
+    position:relative
     &:focus
         width: 110%
-
+.password
+    position: absolute
+    border: none
+    margin-left: 22%
+    background: none
+.error
+    color: $red
+    font-size: 12px
+    margin-top: 5px
+    margin-bottom: 10px
 .select
     align-self: center
     width: 100%
@@ -57,7 +68,7 @@ option
     font-family: $fontFamily
 
 .btn-register
-    align-content:  center
+    align-content: center
     justify-content: center
     height: 40px
     width: 50%
@@ -82,3 +93,9 @@ option
     a
         color: $blue
         text-decoration: none
+
+.visibility-icon
+    position: absolute
+    background: none
+    border: none
+    right: 60px

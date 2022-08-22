@@ -1,34 +1,87 @@
 <main>
-    <div class="container">
-        <form class="form">
-            <div class="input-icons">
-                <mat-icon class="icon i" aria-hidden="false" fontIcon="person">
-                </mat-icon>
-                <input class="input" placeholder="Username">
-            </div>
-            <div class="input-icons">
-                <mat-icon class="icon" aria-hidden="false" fontIcon="lock"></mat-icon>
-                <input class="input" placeholder="Password">
-            </div>
-            <div class="input-icons">
-                <mat-icon class="icon" aria-hidden="false" fontIcon="lock"></mat-icon>
-                <input class="input" placeholder="Confirm Password">
-            </div>
-            <div class="input-icons">
-                <mat-icon class="icon" aria-hidden="false" fontIcon="supervisor_account"></mat-icon>
-                <mat-select class="select" value="">
-                    <mat-option value="" disabled selected>User Type</mat-option>
-                    <mat-option value="user">User</mat-option>
-                    <mat-option value="admin">Admin</mat-option>
-                </mat-select>
-            </div>
-            <br>
-            <button class="btn-register"(click)="register()">REGISTER</button> <br>
-        </form>
-        <span class="text">
-            Already have an account?
-            <a routerLink="/">Log in.</a>
-        </span>
-
-    </div>
+  <div class="container">
+    <form class="form" [formGroup]="registerForm" (ngSubmit)="register()">
+      <div class="input-icons">
+        <mat-icon class="icon i" aria-hidden="false" fontIcon="person">
+        </mat-icon>
+        <input
+          type="text"
+          class="input"
+          placeholder="Username"
+          name="userName"
+          formControlName="userName"
+        />
+      </div>
+      <div
+        *ngIf="
+          registerForm.controls.userName.errors &&
+          registerForm.controls.userName.dirty
+        "
+        class="error"
+      >
+        Username is required
+      </div>
+      <div class="input-icons">
+        <mat-icon class="icon" aria-hidden="false" fontIcon="lock"></mat-icon>
+        <button (click)="showHidePassword($event)" class="visibility-icon">
+          <div *ngIf="showPassword">
+            <mat-icon
+              class="icon"
+              aria-hidden="false"
+              fontIcon="visibility_off"
+            ></mat-icon>
+          </div>
+          <div *ngIf="!showPassword">
+            <mat-icon
+              class="icon"
+              aria-hidden="false"
+              fontIcon="visibility"
+            ></mat-icon>
+          </div>
+        </button>
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          class="input"
+          placeholder="Password"
+          name="password"
+          formControlName="password"
+        />
+      </div>
+      <div
+        *ngIf="
+          registerForm.controls.password.errors &&
+          registerForm.controls.password.dirty
+        "
+        class="error"
+      >
+        Password is required
+      </div>
+      <div class="input-icons">
+        <mat-icon
+          class="icon"
+          aria-hidden="false"
+          fontIcon="supervisor_account"
+        ></mat-icon>
+        <select
+          class="select"
+          (change)="changeType($event)"
+          formControlName="userType"
+        >
+          <option disabled selected>User Type</option>
+          <option *ngFor="let type of UserType" [ngValue]="type">
+            {{ type }}
+          </option>
+        </select>
+      </div>
+      <br />
+      <button class="btn-register" [disabled]="registerForm.invalid">
+        REGISTER
+      </button>
+      <br />
+    </form>
+    <span class="text">
+      Already have an account?
+      <a routerLink="/">Log in.</a>
+    </span>
+  </div>
 </main>

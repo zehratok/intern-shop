@@ -17,15 +17,13 @@ var icon_1 = require("@angular/material/icon");
 var select_1 = require("@angular/material/select");
 var forms_1 = require("@angular/forms");
 var snack_bar_1 = require("@angular/material/snack-bar");
+var http_1 = require("@angular/common/http");
 var StarterModule = /** @class */ (function () {
     function StarterModule() {
     }
     StarterModule = __decorate([
         core_1.NgModule({
-            declarations: [
-                starter_component_1.StarterComponent,
-                register_component_1.RegisterComponent
-            ],
+            declarations: [starter_component_1.StarterComponent, register_component_1.RegisterComponent],
             imports: [
                 common_1.CommonModule,
                 starter_routing_module_1.StarterRoutingModule,
@@ -33,7 +31,8 @@ var StarterModule = /** @class */ (function () {
                 icon_1.MatIconModule,
                 select_1.MatSelectModule,
                 forms_1.ReactiveFormsModule,
-                snack_bar_1.MatSnackBarModule
+                snack_bar_1.MatSnackBarModule,
+                http_1.HttpClientModule,
             ]
         })
     ], StarterModule);

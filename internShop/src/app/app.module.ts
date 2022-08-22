@@ -10,7 +10,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {MatButtonModule} from '@angular/material/button';
 @NgModule({
   declarations: [AppComponent, ErrorComponent],
   imports: [
@@ -20,7 +20,6 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     MatSnackBarModule,
     MatIconModule,
-    MatDialogModule
     MatDialogModule,
     ReactiveFormsModule
   ],

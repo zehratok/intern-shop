@@ -13,20 +13,30 @@ var error_component_1 = require("./error/error.component");
 var product_details_component_1 = require("./shop/product-details/product-details.component");
 var shop_component_1 = require("./shop/shop.component");
 var shopping_cart_component_1 = require("./shop/shopping-cart/shopping-cart.component");
+var register_component_1 = require("./starter/register/register.component");
 var routes = [
     {
         path: '',
-        loadChildren: function () { return Promise.resolve().then(function () { return require('./starter/starter.module'); }).then(function (m) { return m.StarterModule; }); }
+        loadChildren: function () {
+            return Promise.resolve().then(function () { return require('./starter/starter.module'); }).then(function (m) { return m.StarterModule; });
+        }
     },
     {
-        path: "shop", component: shop_component_1.ShopComponent,
+        path: 'register',
+        component: register_component_1.RegisterComponent
+    },
+    {
+        path: 'shop',
+        component: shop_component_1.ShopComponent,
         loadChildren: function () { return Promise.resolve().then(function () { return require('./shop/shop.module'); }).then(function (m) { return m.ShopModule; }); }
     },
     {
-        path: "shopping-cart", component: shopping_cart_component_1.ShoppingCartComponent
+        path: 'shopping-cart',
+        component: shopping_cart_component_1.ShoppingCartComponent
     },
     {
-        path: "product-details/:id", component: product_details_component_1.ProductDetailsComponent
+        path: 'product-details/:id',
+        component: product_details_component_1.ProductDetailsComponent
     },
     {
         path: '**',

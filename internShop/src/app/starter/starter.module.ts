@@ -7,14 +7,12 @@ import { RegisterComponent } from './register/register.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    StarterComponent,
-    RegisterComponent
-  ],
+  declarations: [StarterComponent, RegisterComponent],
   imports: [
     CommonModule,
     StarterRoutingModule,
@@ -22,7 +20,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatIconModule,
     MatSelectModule,
     ReactiveFormsModule,
-    MatSnackBarModule
-  ]
+    MatSnackBarModule,
+    HttpClientModule,
+  ],
 })
-export class StarterModule { }
+export class StarterModule {}
