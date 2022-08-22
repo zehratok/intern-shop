@@ -20,8 +20,8 @@ var RegisterComponent = /** @class */ (function () {
     }
     RegisterComponent.prototype.ngOnInit = function () {
         this.registerForm = this.fb.group({
-            userName: ['', forms_1.Validators.maxLength(20)],
-            password: ['', forms_1.Validators.minLength(8) && forms_1.Validators.maxLength(20)],
+            userName: ['', forms_1.Validators.required || forms_1.Validators.maxLength(20)],
+            password: ['', forms_1.Validators.required || forms_1.Validators.minLength(8) && forms_1.Validators.maxLength(20)],
             userType: ['', forms_1.Validators.required]
         });
     };
