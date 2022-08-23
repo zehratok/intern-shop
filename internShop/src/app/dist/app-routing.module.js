@@ -14,12 +14,11 @@ var product_details_component_1 = require("./shop/product-details/product-detail
 var shop_component_1 = require("./shop/shop.component");
 var shopping_cart_component_1 = require("./shop/shopping-cart/shopping-cart.component");
 var register_component_1 = require("./starter/register/register.component");
+var starter_guard_1 = require("./starter/starter.guard");
 var routes = [
     {
         path: '',
-        loadChildren: function () {
-            return Promise.resolve().then(function () { return require('./starter/starter.module'); }).then(function (m) { return m.StarterModule; });
-        }
+        loadChildren: function () { return Promise.resolve().then(function () { return require('./starter/starter.module'); }).then(function (m) { return m.StarterModule; }); }
     },
     {
         path: 'register',
@@ -28,11 +27,13 @@ var routes = [
     {
         path: 'shop',
         component: shop_component_1.ShopComponent,
-        loadChildren: function () { return Promise.resolve().then(function () { return require('./shop/shop.module'); }).then(function (m) { return m.ShopModule; }); }
+        loadChildren: function () { return Promise.resolve().then(function () { return require('./shop/shop.module'); }).then(function (m) { return m.ShopModule; }); },
+        canActivate: [starter_guard_1.StarterGuard]
     },
     {
         path: 'shopping-cart',
-        component: shopping_cart_component_1.ShoppingCartComponent
+        component: shopping_cart_component_1.ShoppingCartComponent,
+        canActivate: [starter_guard_1.StarterGuard]
     },
     {
         path: 'product-details/:id',

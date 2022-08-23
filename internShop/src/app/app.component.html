@@ -4,14 +4,14 @@
       <a class="logo" routerLink=""> {{title}}
       </a>
     </div>
-    <div class="tool-bar-menu" *ngIf="showToolBarShop">
-      <button>
+    <div class="tool-bar-menu" *ngIf="isLoggedIn()">
+      <button routerLink="favorites">
         <mat-icon class="icon fav">favorite</mat-icon>
       </button>
-      <button>
+      <button routerLink="shopping-cart">
         <mat-icon class="icon shop">shopping_cart</mat-icon>
       </button>
-      <button>
+      <button routerLink="profile">
         <mat-icon class="icon acc">account_circle</mat-icon>
       </button>
     </div>
@@ -22,7 +22,6 @@
       <button>
         <mat-icon class="icon store">store</mat-icon>
       </button>
-     
     </div>
   </div>
   <router-outlet></router-outlet>

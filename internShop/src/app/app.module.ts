@@ -10,7 +10,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
-import {MatButtonModule} from '@angular/material/button';
+import { MatButtonModule } from '@angular/material/button';
+import { StarterGuard } from './starter/starter.guard';
 @NgModule({
   declarations: [AppComponent, ErrorComponent],
   imports: [
@@ -21,13 +22,14 @@ import {MatButtonModule} from '@angular/material/button';
     MatSnackBarModule,
     MatIconModule,
     MatDialogModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
     {
       provide: 'apiUrl',
       useValue: 'http://localhost:3500',
     },
+    StarterGuard,
   ],
   bootstrap: [AppComponent],
 })

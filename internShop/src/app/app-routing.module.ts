@@ -5,12 +5,12 @@ import { ProductDetailsComponent } from './shop/product-details/product-details.
 import { ShopComponent } from './shop/shop.component';
 import { ShoppingCartComponent } from './shop/shopping-cart/shopping-cart.component';
 import { RegisterComponent } from './starter/register/register.component';
+import { StarterGuard } from './starter/starter.guard';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./starter/starter.module').then((m) => m.StarterModule),
+    loadChildren: () => import('./starter/starter.module').then((m) => m.StarterModule),
   },
   {
     path: 'register',
@@ -20,10 +20,14 @@ const routes: Routes = [
     path: 'shop',
     component: ShopComponent,
     loadChildren: () => import('./shop/shop.module').then((m) => m.ShopModule),
+    canActivate: [StarterGuard],
+
   },
   {
     path: 'shopping-cart',
     component: ShoppingCartComponent,
+    canActivate: [StarterGuard],
+
   },
   {
     path: 'product-details/:id',
@@ -39,4 +43,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -1,6 +1,6 @@
 <main>
   <div class="container">
-    <form class="form" [formGroup]="loginForm">
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="login()">
       <div class="input-icons">
         <mat-icon class="icon i" aria-hidden="false" fontIcon="person">
         </mat-icon>
@@ -8,23 +8,21 @@
           type="text"
           class="input"
           placeholder="Username"
-          name="userName"
-          formControlName="userName"
+          name="name"
+          formControlName="name"
         />
         <div
           *ngIf="
-            loginForm.controls.userName.errors &&
-            loginForm.controls.userName.dirty
+            loginForm.controls.name.errors && loginForm.controls.name.dirty
           "
           class="error"
         >
           Username is required
         </div>
       </div>
-
       <div class="input-icons">
         <mat-icon class="icon" aria-hidden="false" fontIcon="lock"></mat-icon>
-        <button class="password" (click)="showHidePassword()">
+        <button (click)="showHidePassword($event)" class="visibility-icon">
           <div *ngIf="showPassword">
             <mat-icon
               class="icon"
@@ -58,7 +56,9 @@
           Password is required
         </div>
       </div>
-      <button type="submit" class="btn-login" (click)="login()">LOGIN</button>
+      <button type="submit" class="btn-login" [disabled]="loginForm.invalid">
+        LOGIN
+      </button>
       <br />
     </form>
     <span class="text">

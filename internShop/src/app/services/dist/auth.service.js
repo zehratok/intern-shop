@@ -15,9 +15,29 @@ var AuthService = /** @class */ (function () {
     function AuthService(http, apiUrl) {
         this.http = http;
         this.apiUrl = apiUrl;
+        this.loggedIn = false;
     }
     AuthService.prototype.register = function (user) {
         return this.http.post(this.apiUrl + '/users', user);
+    };
+    AuthService.prototype.login = function (user) {
+        if (user.name == 'zehra' && user.password == '12345') {
+            this.loggedIn = true;
+            localStorage.setItem('isLogged', user.name);
+            console.log(2);
+            return true;
+        }
+        return false;
+    };
+    AuthService.prototype.isLoggedIn = function () {
+        return this.loggedIn;
+    };
+    AuthService.prototype.ReadLocalStorage = function () {
+        return localStorage.getItem('isLogged');
+    };
+    AuthService.prototype.logOut = function () {
+        localStorage.removeItem('isLogged');
+        this.loggedIn = false;
     };
     AuthService = __decorate([
         core_1.Injectable({

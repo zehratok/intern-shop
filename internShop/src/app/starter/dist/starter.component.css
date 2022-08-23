@@ -9,6 +9,7 @@
   align-self: center;
   width: 25%;
   min-width: 270px;
+  position: relative;
 }
 
 .icon {
@@ -83,4 +84,11 @@
 
 mat-form-field {
   margin-right: 12px;
+}
+
+.visibility-icon {
+  position: absolute;
+  background: none;
+  border: none;
+  right: 60px;
 }
