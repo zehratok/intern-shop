@@ -17,6 +17,7 @@ var http_1 = require("@angular/common/http");
 var snack_bar_1 = require("@angular/material/snack-bar");
 var icon_1 = require("@angular/material/icon");
 var dialog_1 = require("@angular/material/dialog");
+var store_1 = require("@ngxs/store");
 var forms_1 = require("@angular/forms");
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -32,6 +33,7 @@ var AppModule = /** @class */ (function () {
                 snack_bar_1.MatSnackBarModule,
                 icon_1.MatIconModule,
                 dialog_1.MatDialogModule,
+                store_1.NgxsModule.forRoot(),
                 forms_1.ReactiveFormsModule
             ],
             providers: [
